@@ -1,0 +1,21 @@
+@layout('layouts/base')
+@section('content')
+@set('next',route('/blog/'+(+index+1)))
+@set('prev',route('/blog/'+(+index-1)))
+<div class="post">
+
+    <h1>{{ capitalize(title) }}</h1>
+    <figure>
+        <img src="{{image}}" alt="">
+    </figure>
+    {{{ content }}}
+    <nav role="pagination">
+        @if(prev)
+        <a href="{{prev.url}}" title="{{prev.data.title}}">{{prev.data.title}}</a>
+        @end
+        @if(next)
+        <a href="{{next.url}}" class="next" title="{{next.data.title}}">{{next.data.title}}</a>
+        @end
+    </nav>
+</div>
+@end

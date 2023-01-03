@@ -1,0 +1,16 @@
+:root {
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+  --color-gray0: #f8f9fa;
+  --color-gray1: #f1f3f5;
+  --color-gray2: #e9ecef;
+  --color-gray3: #dee2e6;
+  --color-gray4: #ced4da;
+  --color-gray5: #adb5bd;
+  --color-gray6: #868e96;
+  --color-gray7: #495057;
+  --color-gray8: #343a40;
+  --color-gray9: #212529;
+  --color-gray10: #16191d;
+  --color-gray11: #0d0f12;
+  --color-gray12: #030507;
+}

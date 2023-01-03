@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ siteTitle }} | {{ title }}</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta
+            name="description"
+            content="Follow the adventures of Daedalus, a famous inventor, sculptor, and architect of Ancient Greece. Discover his
+                creations and inventions on our blog.">
+        <meta
+            name="keywords"
+            content="Daedalus, Athens, minotaur, labyrinth, Theseus, Ariadne, inventor, sculptor, architect, Ancient Greece">
+    </head>
+    <body>
+        <header>
+            <a href="/" class="siteTitle">{{ siteTitle }}</a>
+            <nav>
+                <ul role="list">
+                    @each( item in routes('/{,*}'))
+                        <li>
+                            <a href="{{ item.url }}" class="{{ item.data.title===title ? 'current' : '' }}">
+                                {{capitalize( item.data.title) }}
+                            </a>
+                        </li>
+                    @end
+                </ul>
+            </nav>
+        </header>
+        <main class="page-{{ title }}"> 
+            @!section('content')
+        </main>
+        <footer>
+            © -400 BC Daedalus's Blog. All rights reserved.
+
+        </footer>
+            <script type="module" src="/src/main.ts"></script>
+        </body>
+    </html>
