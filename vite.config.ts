@@ -17,4 +17,5 @@ export default defineConfig({
       routes: routes(),
     }),
   ],
+  base: "/daedalus-s-blog/",
 });

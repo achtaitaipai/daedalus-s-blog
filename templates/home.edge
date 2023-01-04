@@ -2,7 +2,7 @@
 @section('content')
     @each(article in routes('/blog/*'))
         <article class="card">
-                <a href="{{ article.url }}">
+                <a href="{{base + article.url }}" class="article-card">
                         <h3>
                             {{ article.data.title }}
                         </h3>
@@ -10,7 +10,7 @@
                             {{ article.data.resume}}...
                         </p>
                         <div class="metadata">
-                            <span>{{article.data.time}} Minutes</span>
+                            <span>{{article.data.time}} Seconds</span>
                             <time>{{ article.data.date }} BCE</time>
                         </div>
                     </a>

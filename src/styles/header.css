@@ -26,16 +26,36 @@ header {
 nav {
   display: flex;
   font-weight: 600;
+  flex-shrink: 0;
 }
 nav ul {
+  display: grid;
+  position: relative;
   margin: 0;
   padding: 0;
-  display: inline-flex;
-  gap: 0.8rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  place-items: center;
+  overflow: hidden;
+  --offset-x: 0.35rem;
+  --item-width: calc(100% / var(--n-items));
 }
 
-nav .current {
-  text-decoration: underline;
+nav ul::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: calc(var(--item-width) * var(--current-item) + var(--offset-x));
+  width: calc(var(--item-width) - var(--offset-x) * 2);
+  background-color: var(--color-gray7);
+}
+
+nav ul > * {
+  width: 100%;
+  text-align: center;
+  padding-block: 0.2rem;
+  padding-inline: 0.4rem;
 }
 
 h1 {
@@ -47,4 +67,9 @@ footer {
   padding: 1rem 0.5rem;
   text-align: center;
   font-style: italic;
+}
+
+nav a:where(:hover, :focus-within) {
+  display: inline-block;
+  animation: pulse 0.3s;
 }

@@ -37,10 +37,20 @@ body {
   line-height: 1.5;
 }
 
-/* A elements that don't have a class get default styles */
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:not([class]) {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 600;
+  font-style: italic;
+}
+
+a:not([class]):where(:hover, :focus) {
+  animation: shake-y 0.5s linear;
 }
 
 /* Make images easier to work with */

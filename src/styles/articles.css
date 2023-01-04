@@ -1,6 +1,5 @@
 article {
   position: relative;
-  padding: 1rem 2rem;
   text-decoration: none;
   width: var(--article-size);
   height: var(--article-size);
@@ -25,15 +24,16 @@ article::after {
   border: 1px solid var(--color-gray3);
   background-color: var(--color-gray2);
 }
-article:is(:hover, :focus) {
+article:has(a:is(:hover, :focus)) {
   transform: translate(0.5rem, -0.5rem);
 }
 
-article:is(:hover, :focus)::before {
+article:has(a:is(:hover, :focus))::before {
   transform: translate(-1rem, 1rem);
 }
 article a {
   display: grid;
+  padding: 1rem 2rem;
   height: 100%;
   grid-template-rows: auto 1fr auto;
   align-items: center;

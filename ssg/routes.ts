@@ -15,7 +15,6 @@ const pagesRoutes = loadAllMdFilesFrom<{ title: string }>("content/pages").map(
 type ArticleFrontmatter = {
   title: string;
   date: string;
-  image: string;
 };
 
 const articles = loadAllMdFilesFrom<ArticleFrontmatter>(
@@ -27,7 +26,6 @@ const articlesRoutes = articles.map((a) => ({
   data: {
     title: a.frontmatter.title,
     date: a.frontmatter.date,
-    image: a.frontmatter.image,
     content: a.content,
     resume: a.raw.slice(0, 100),
     index: a.filename,
@@ -40,7 +38,7 @@ export const routes = (): Route[] => {
       url: "/",
       template: "home",
       data: {
-        title: "home",
+        title: "blog",
       },
     },
     ...pagesRoutes,

@@ -6,15 +6,15 @@
 
     <h1>{{ capitalize(title) }}</h1>
     <figure>
-        <img src="{{image}}" alt="">
+        <img src="/images/{{index}}.webp" alt="">
     </figure>
     {{{ content }}}
-    <nav role="pagination">
+    <nav role="navigation" aria-label="Pagination Navigation">
         @if(prev)
-        <a href="{{prev.url}}" title="{{prev.data.title}}">{{prev.data.title}}</a>
+        <a href="{{base+prev.url}}" title="{{prev.data.title}}" rel="prev">{{prev.data.title}}</a>
         @end
         @if(next)
-        <a href="{{next.url}}" class="next" title="{{next.data.title}}">{{next.data.title}}</a>
+        <a href="{{base+next.url}}" title="{{next.data.title}}" rel="next">{{next.data.title}}</a>
         @end
     </nav>
 </div>
