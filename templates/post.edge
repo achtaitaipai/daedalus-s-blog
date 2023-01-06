@@ -6,7 +6,10 @@
 
     <h1>{{ capitalize(title) }}</h1>
     <figure>
-        <img src="/images/{{index}}.webp" alt="">
+        <picture>
+            <source srcset="/images/{{index}}.webp">
+            <img src="/images/{{index}}.jpg" alt="">
+        </picture>
     </figure>
     {{{ content }}}
     <nav role="navigation" aria-label="Pagination Navigation">

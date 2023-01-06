@@ -38,7 +38,7 @@ export const routes = (): Route[] => {
       url: "/",
       template: "home",
       data: {
-        title: "blog",
+        title: "articles",
       },
     },
     ...pagesRoutes,
