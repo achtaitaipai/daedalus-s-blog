@@ -37,7 +37,7 @@ nav ul {
   grid-auto-columns: 1fr;
   place-items: center;
   overflow: hidden;
-  --offset-x: 0.35rem;
+  --offset-x: 0rem;
   --item-width: calc(100% / var(--n-items));
 }
 
@@ -46,9 +46,11 @@ nav ul::after {
   position: absolute;
   height: 2px;
   bottom: 0;
-  left: calc(var(--item-width) * var(--current-item) + var(--offset-x));
+  left: 0;
   width: calc(var(--item-width) - var(--offset-x) * 2);
   background-color: var(--color-gray7);
+  transform: translateX(calc(100% * var(--current-item) + var(--offset-x)));
+  transition: transform 0.2s ease-out;
 }
 
 nav ul > * {

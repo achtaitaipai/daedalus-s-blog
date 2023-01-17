@@ -14,10 +14,10 @@
     {{{ content }}}
     <nav role="navigation" aria-label="Pagination Navigation">
         @if(prev)
-        <a href="{{base+prev.url}}" title="{{prev.data.title}}" rel="prev">{{prev.data.title}}</a>
+        <a href="{{base+prev.url}}" title="{{prev.data.title}}" rel="prev" ariane-before="slideToRight" ariane-between="slideFromLeft">{{prev.data.title}}</a>
         @end
         @if(next)
-        <a href="{{base+next.url}}" title="{{next.data.title}}" rel="next">{{next.data.title}}</a>
+        <a href="{{base+next.url}}" title="{{next.data.title}}" rel="next" ariane-before="slideToLeft" ariane-between="slideFromRight">{{next.data.title}}</a>
         @end
     </nav>
 </div>

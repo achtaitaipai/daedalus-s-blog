@@ -2,7 +2,7 @@
 @section('content')
     @each(article in routes('/blog/*'))
         <article class="card">
-                <a href="{{base + article.url }}" class="article-card">
+                <a href="{{base + article.url }}" class="article-card" ariane-router>
                         <h3>
                             {{ article.data.title }}
                         </h3>

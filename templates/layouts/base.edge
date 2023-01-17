@@ -15,14 +15,14 @@
     </head>
     <body>
         <header>
-            <a href="{{base}}/" class="siteTitle">{{ siteTitle }}</a>
+            <a href="{{base}}/" class="siteTitle" ariane-router>{{ siteTitle }}</a>
             <nav>
                 @set('navRoutes',routes('/{,*}'))
                 @set('currentItem',navRoutes.findIndex((el) => el.data.title===title))
                 <ul role="list" style="--n-items:{{navRoutes.length}}; --current-item:{{currentItem > -1 ? currentItem : 0}}">
                     @each( item in navRoutes)
                         <li class="nav_item">
-                            <a href="{{base + item.url }}" class="nav_link {{ item.data.title===title ? 'current' : '' }}">
+                            <a href="{{base + item.url }}" ariane-router class="nav_link {{ item.data.title===title ? 'current' : '' }}">
                                 {{capitalize( item.data.title) }}
                             </a>
                         </li>
